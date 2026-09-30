@@ -17,11 +17,11 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','4244623215802769');
+fbq('init','1289869655519503');
 fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" alt=""
-src="https://www.facebook.com/tr?id=4244623215802769&ev=PageView&noscript=1"></noscript>
+src="https://www.facebook.com/tr?id=1289869655519503&ev=PageView&noscript=1"></noscript>
 <!-- End Meta Pixel -->
 
 <!-- ===================================================================
@@ -303,6 +303,26 @@ footer{text-align:center;font-size:13px;color:var(--ink-soft);padding:0 16px 36p
 <footer>LIFE por Paloma Moraes · pagamento seguro pela Eduzz</footer>
 
 <script>
+// Repassa a origem do visitante para o checkout.
+// Quem chega de anúncio (?utm_source=ads...) leva essa etiqueta até a Eduzz;
+// quem chega direto continua como site-planos. O utm_campaign do botão é
+// preservado de propósito, porque ele identifica o PLANO (out-tri, out-capta).
+(function(){
+  var entrada;
+  try { entrada = new URLSearchParams(location.search); } catch(e){ return; }
+  if (!entrada.get('utm_source')) return;
+  document.querySelectorAll('a[href*="chk.eduzz.com"]').forEach(function(a){
+    try {
+      var u = new URL(a.href);
+      ['utm_source','utm_medium','utm_content','utm_term'].forEach(function(k){
+        var v = entrada.get(k);
+        if (v) u.searchParams.set(k, v);
+      });
+      a.href = u.toString();
+    } catch(e){}
+  });
+})();
+
 document.querySelectorAll('[data-cta]').forEach(function(a){
   a.addEventListener('click', function(){
     if (window.fbq) fbq('track','InitiateCheckout',{

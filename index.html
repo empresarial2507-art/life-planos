@@ -308,13 +308,33 @@ footer{text-align:center;font-size:13px;color:var(--ink-soft);padding:0 16px 36p
 // quem chega direto continua como site-planos. O utm_campaign do botão é
 // preservado de propósito, porque ele identifica o PLANO (out-tri, out-capta).
 (function(){
+  // Guarda o fbclid da chegada, para nao perder se a pessoa recarregar a pagina.
+  try {
+    var q = new URLSearchParams(location.search);
+    if (q.get('fbclid')) sessionStorage.setItem('fbclid', q.get('fbclid'));
+  } catch(e){}
+})();
+
+(function(){
   var entrada;
   try { entrada = new URLSearchParams(location.search); } catch(e){ return; }
-  if (!entrada.get('utm_source')) return;
+  try {
+    var guardado = sessionStorage.getItem('fbclid');
+    if (guardado && !entrada.get('fbclid')) entrada.set('fbclid', guardado);
+  } catch(e){}
+  if (!entrada.get('utm_source') && !entrada.get('fbclid')) return;
   document.querySelectorAll('a[href*="chk.eduzz.com"]').forEach(function(a){
     try {
       var u = new URL(a.href);
       ['utm_source','utm_medium','utm_content','utm_term'].forEach(function(k){
+        var v = entrada.get(k);
+        if (v) u.searchParams.set(k, v);
+      });
+      // Repassa o identificador de clique do Meta. Sem ele, a compra acontece
+      // no dominio da Eduzz sem nenhuma ligacao com o anuncio, e o pixel nao
+      // consegue atribuir a venda (foi o que fez 45 checkouts iniciados
+      // aparecerem com zero compras no Gerenciador).
+      ['fbclid','gclid','ttclid'].forEach(function(k){
         var v = entrada.get(k);
         if (v) u.searchParams.set(k, v);
       });

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Planos LIFE | Paloma Moraes</title>
-<meta name="description" content="Escolha seu acesso ao LIFE: Trimestral, Anual ou Mensal.">
+<title>Black Friday LIFE | 2 anos pelo preço de 1</title>
+<meta name="description" content="Black Friday do LIFE: 2 anos pelo preço de 1 e, no Pix, mais 3 meses de presente. Só até 30/11.">
 <link rel="icon" type="image/png" href="https://palomamoraesnutri.com.br/wp-content/uploads/2024/03/cropped-Logotipo-principal-sem-fundo-Life-metodo-plm-192x192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,8 @@ src="https://www.facebook.com/tr?id=1289869655519503&ev=PageView&noscript=1"></n
 <!-- ===================================================================
      LINKS DE CHECKOUT · para trocar, edite só o href de cada botão.
      Hoje estão os links "x" (co-produção), validados em 29/09/2026:
-       Trimestral  7WXGG16Y0A  (LIFE ACESSO TRIMESTRAL, R$ 199)
+       Dobro       i72ydcv5    (LIFE ACESSO ANUAL - 2 ANOS, Black Friday nov/2026)
+       Trimestral  7WXGG16Y0A  (fora da página desde 06/11/2026)
        Anual       2457308     (atualizado em set/2026, antes KW8K727D01)
        Mensal      E9OB5OPG0B  (atualizado em set/2026, antes 7WXQ6P4Y9A)
      Links gerais, se precisar: anual 2457304 · mensal 2457307
@@ -124,6 +125,24 @@ header p{color:var(--ink-soft);margin-top:8px}
 .tri .btn{margin-top:24px;font-size:16px;min-height:62px}
 .tri .nota{margin-top:12px;font-size:13px;color:var(--ink-dark-soft);text-align:center}
 
+/* ===== Black Friday · Dobro ===== */
+.tri{background:radial-gradient(120% 90% at 85% 10%,#5A1D38 0%,#22121B 50%,#141014 100%)}
+.tri::before{background:radial-gradient(circle,rgba(214,51,108,.5),transparent 65%)}
+.selo.bf{background:#FFD400;color:#141014}
+.selo.bf i{background:#141014}
+.tri h2 em{color:#FFD400}
+.preco-tri .num small{font-family:var(--font-b);font-size:.22em;font-weight:700;letter-spacing:.02em;margin-right:8px;vertical-align:.9em}
+.presente{
+  display:flex;gap:10px;align-items:center;margin-top:16px;padding:12px 16px;border-radius:16px;
+  background:rgba(255,212,0,.1);border:1px solid rgba(255,212,0,.45);font-size:15px;
+}
+.presente b{color:#FFD400}
+.alt{margin-top:12px;font-size:14px;color:var(--ink-dark-soft);text-align:center}
+.alt a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:700}
+.relogio{margin-top:16px;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--pink-deep)}
+.relogio[hidden]{display:none}
+.anual .nudge{font-size:14px;color:var(--ink-soft);margin-top:10px;padding:10px 14px;border-radius:14px;background:var(--rose-soft);text-wrap:pretty}
+
 /* ===== BANNER 2 · ANUAL ===== */
 .anual{
   position:relative;border-radius:24px;background:var(--surface);
@@ -185,7 +204,7 @@ footer{text-align:center;font-size:13px;color:var(--ink-soft);padding:0 16px 36p
 @media (min-width:760px){
   .tri{padding:48px 48px 44px}
   .tri .btn{max-width:420px}
-  .tri .nota{text-align:left;max-width:420px}
+  .tri .nota,.tri .alt{text-align:left;max-width:420px}
   .anual{grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:34px 38px;gap:32px;align-items:center}
   .mensal{grid-template-columns:minmax(0,1fr) 240px;gap:16px 26px;padding:24px 32px}
   .mensal > div{grid-column:1 / -1}
@@ -193,7 +212,7 @@ footer{text-align:center;font-size:13px;color:var(--ink-soft);padding:0 16px 36p
 @media (min-width:960px){
   .tri > div{
     display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:48px;align-items:center;
-    grid-template-areas:"selo selo" "h2 h2" "sub sub" "preco lista" "btn lista" "nota lista";
+    grid-template-areas:"selo selo" "h2 h2" "sub sub" "preco lista" "presente lista" "btn lista" "alt lista" "nota lista";
   }
   .tri .selo{grid-area:selo}
   .tri h2{grid-area:h2}
@@ -201,6 +220,8 @@ footer{text-align:center;font-size:13px;color:var(--ink-soft);padding:0 16px 36p
   .tri .preco-tri{grid-area:preco}
   .tri .btn{grid-area:btn}
   .tri .nota{grid-area:nota}
+  .tri .presente{grid-area:presente}
+  .tri .alt{grid-area:alt}
   .tri .lista{
     grid-area:lista;align-self:center;margin-top:20px;padding:24px 26px;border-radius:20px;
     background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
@@ -221,44 +242,50 @@ footer{text-align:center;font-size:13px;color:var(--ink-soft);padding:0 16px 36p
     <img src="https://palomamoraesnutri.com.br/wp-content/uploads/2024/02/Simbolo-sem-fundo-Life-metodo-plm.png" alt="" width="34" height="34">
     <span>LIFE <small>por Paloma Moraes</small></span>
   </div>
-  <h1 class="rv d1">Escolha seu <em>acesso</em></h1>
+  <h1 class="rv d1">Black Friday: <em>2 anos</em> pelo preço de 1</h1>
+  <p class="relogio rv d1" data-relogio>só até 30/11 às 23h59</p>
 </header>
 
 <main class="wrap banners">
 
-  <!-- BANNER 1 · TRIMESTRAL -->
-  <section class="tri rv d2" aria-label="Plano Trimestral">
+  <!-- BANNER 1 · ANUAL EM DOBRO (Black Friday, até 30/11) -->
+  <section class="tri rv d2" aria-label="Anual em Dobro, Black Friday">
     <div>
-      <span class="selo"><i></i>novo · out, nov e dez</span>
-      <h2>3 meses de LIFE <em>pra fechar o ano</em> diferente</h2>
-      <p class="sub">Tudo do LIFE liberado por 90 dias, pagando uma vez só.</p>
+      <span class="selo bf"><i></i>black friday · a melhor escolha</span>
+      <h2>2 anos de LIFE <em>pelo preço de 1</em></h2>
+      <p class="sub">O mesmo valor do anual, o dobro do tempo. Tudo do LIFE liberado por 2 anos.</p>
 
       <div class="preco-tri">
-        <span class="num"><sup>R$</sup>199</span>
-        <span class="info"><b>ou 12x de 16,66</b></span>
+        <span class="num"><small>12x</small>R$ 49,90</span>
+        <span class="info"><b>ou R$ 598,80 no Pix</b>2 anos de acesso</span>
       </div>
 
+      <p class="presente"><span aria-hidden="true">🎁</span><span><b>No Pix, +3 meses de presente.</b> São 27 meses de LIFE.</span></p>
+
       <ul class="lista">
-        <li><svg class="ic" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Aulas semanais e +100 aulas gravadas</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Aulas semanais, +100 aulas gravadas e 12 módulos</li>
         <li><svg class="ic" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Planos alimentares por objetivo, receitas e treinos por nível</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Módulos exclusivos do anual: Shape Slim, Corrida, Psicologia, Foco e Endocrinologia</li>
         <li><svg class="ic" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Comunidade com a Paloma e o Time LIFE</li>
       </ul>
 
-      <a class="btn" data-cta="trimestral" data-valor="199" href="https://chk.eduzz.com/7WXGG16Y0A?utm_source=site-planos&utm_campaign=out-tri" rel="noopener">QUERO MEUS 3 MESES</a>
-      <p class="nota">Não renova sozinho. 7 dias de garantia.</p>
+      <a class="btn" data-cta="dobro" data-valor="598.80" href="https://chk.eduzz.com/i72ydcv5?utm_source=site-planos&utm_campaign=black&utm_content=dobro" rel="noopener">QUERO MEUS 2 ANOS</a>
+      <p class="alt">Pague no Pix e ganhe +3 meses. No cartão, 12x de R$ 49,90.</p>
+      <p class="nota">7 dias de garantia. Oferta da Black até 30/11.</p>
     </div>
   </section>
 
   <!-- BANNER 2 · ANUAL -->
   <section class="anual rv d3" aria-label="Plano Anual">
     <div>
-      <span class="tag">anual · 365 dias</span>
-      <h2>Um ano inteiro com <em>tudo</em> do LIFE</h2>
+      <span class="tag">anual · 1 ano</span>
+      <h2>Prefere <em>só 1 ano</em>?</h2>
       <div class="preco-anual">
         <span class="num"><small>12x</small>R$ 49,90</span>
         <p>ou à vista: de <s>R$ 838,80</s> por <strong>R$ 598,80</strong> (30% off)</p>
         <p class="limite">Parcelado sem comprometer o limite total do cartão.</p>
       </div>
+      <p class="nudge">Pelo mesmo R$ 49,90 por mês, o Dobro te dá o dobro do tempo.</p>
     </div>
     <div>
       <ul class="lista">
@@ -303,6 +330,19 @@ footer{text-align:center;font-size:13px;color:var(--ink-soft);padding:0 16px 36p
 <footer>LIFE por Paloma Moraes · pagamento seguro pela Eduzz</footer>
 
 <script>
+// Relógio da Black: conta até 30/11 23h59 (Brasília) e some a oferta-tempo depois.
+(function(){
+  var el = document.querySelector('[data-relogio]'); if (!el) return;
+  var fim = new Date('2026-11-30T23:59:59-03:00').getTime();
+  function tick(){
+    var r = fim - Date.now();
+    if (r <= 0){ el.hidden = true; return; }
+    var d = Math.floor(r/864e5), h = Math.floor(r%864e5/36e5), m = Math.floor(r%36e5/6e4);
+    el.textContent = 'a Black termina em ' + (d ? d + 'd ' : '') + h + 'h ' + (m<10?'0':'') + m + 'min';
+  }
+  tick(); setInterval(tick, 30000);
+})();
+
 // Repassa a origem do visitante para o checkout.
 // Quem chega de anúncio (?utm_source=ads...) leva essa etiqueta até a Eduzz;
 // quem chega direto continua como site-planos. O utm_campaign do botão é
